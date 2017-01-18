@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>vCard To CSV Converter</title>
+
+</head>
+<body>
+<!--<label for="vCardFileInput">Choose a vCardFile</label>-->
+<!--<input id="vCardFileInput" type="file"/>-->
+<br>
+<button id="openFile" onclick="openFile();">Choose a vCardFile to open</button>
+<button id="saveFile" onClick="saveDestination();" style="display: none">Choose the CSV destination</button>
+<button id="convert" onClick="convert();" style="display: none">Convert</button>
+
+<div id="result">
+    <h2 id="success"></h2>
+    <h2 id="errors"></h2>
+    <h2>Error List</h2>
+    <ul id="errorList"></ul>
+
+</div>
+<script src="../render/select.js"></script>
+
+</body>
+</html>
+

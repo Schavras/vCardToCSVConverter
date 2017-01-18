@@ -1,0 +1,22 @@
+{
+  "name": "vCardToCSV",
+  "description": "Vcard to CVS converter",
+  "author": "Stavros Zarpas",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "tk.lizardsolutions.com.vcardtocsv",
+    "mac": {
+      "category": "converter"
+    },
+    "win": {}
+  },
+  "devDependencies": {
+    "electron-builder": "^11.4.4",
+    "electron": "^1.4.14"
+  }
+}
