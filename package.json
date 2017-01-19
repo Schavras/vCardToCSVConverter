@@ -1,7 +1,15 @@
 {
+  "build": {
+    "appId": "tk.lizardsolutions.com.vcardtocsv",
+    "win": {
+      "iconUrl": "https://raw.githubusercontent.com/Schavras/vCardToCSVConverter/master/assets/win/logo.ico",
+      "icon": "build/icon.ico",
+      "setupIcon": "build/icon.ico"
+    }
+  },
   "name": "vCardToCSV",
   "description": "Vcard to CVS converter",
-  "author":  {
+  "author": {
     "name": "Stavros Zarpas",
     "email": "stavros.z@hotmail.com",
     "url": "http://lizardsolutions.tk/"
@@ -10,17 +18,10 @@
   "main": "main.js",
   "scripts": {
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build",
+    "pack-win": "electron-packager . vCardToCSV --asar.unpack=protocol-link.html --overwrite --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true --out=out --version-string.CompanyName='Lizard Solutions' --version-string.FileDescription='vCard to CVS' --version-string.ProductName='vCard to CVS'"
   },
-  "build": {
-    "appId": "tk.lizardsolutions.com.vcardtocsv",
-    "mac": {
-      "category": "converter"
-    },
-    "win": {
-      "iconUrl": "https://raw.githubusercontent.com/Schavras/vCardToCSVConverter/master/assets/win/logo.ico"
-    }
-  },
+  "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.14",
     "electron-builder": "^11.4.4",
