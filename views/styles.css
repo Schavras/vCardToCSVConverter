@@ -1,0 +1,85 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    background-color: #e9ebee;
+}
+
+.container {
+    width: 90%;
+    margin: 0px auto;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    display: block;
+    padding: 20px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background-color: #6f5499;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 1.5em;
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+    transition: background-color 0.5s;
+    /*transition: color 0.7s;*/
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, .7);
+    color: #6f5499;
+    /*transition: background-color 0.5s linear;*/
+    /*transition: color 0.5s linear;*/
+}
+
+#convert {
+    width: 100%;
+    margin-top: 3%;
+    padding: 35px;
+}
+
+.buttons {
+    width: 100%;
+}
+
+#result{
+    display: none;
+}
+
+#errors{
+    color: #f90634;
+    float: left;
+}
+
+#success{
+    color: #0fbe38;
+    float: left;
+}
+
+.statistics{
+    width: 100%;
+    margin-top: 4%;
+}
+
+.statistics h2{
+    width: 50%;
+}
+
+.clear {
+    clear: both;
+}
+

@@ -8,17 +8,23 @@ exports.vCardTCSV = (input, output) => {
     const vCard = io.readvCard(input);
     var contacts = splitContacts(vCard);
     // console.log(contacts);
-    var result = [];
-    var  errors = 0;
+    var result = [["email", "name"]];
+    var errors = 0;
     var errorList = [];
+    var nameField;
     for (var i = 0; i < contacts.length; i++) {
 
         var tempEmail = extractEmail(contacts[i]);
-        result[i] = [];
+        result[i + 1] = [];
         if (validateEmail(tempEmail)) {
 
-            result[i].push(tempEmail);
-            result[i].push(extractName(contacts[i]));
+            result[i + 1].push(tempEmail);
+            nameField = extractName(contacts[i]);
+            if (nameField) {
+                result[i + 1].push(nameField);
+            } else {
+                result[i + 1].push(tempEmail);
+            }
         } else {
             errorList.push(contacts[i]);
             errors++;
@@ -26,19 +32,15 @@ exports.vCardTCSV = (input, output) => {
 
     }
 
-    // console.log("Success: "+ (result.length - errors) + "/" + contacts.length);
-    // // console.log("Results: "+result.length);
-    // console.log("Errors: "+ errors);
-    // console.log(errorList);
 
     io.writeCSV(output, result);
     var resultJSON = {};
-    resultJSON.total = result.length;
-    resultJSON.success = result.length - errors;
+    resultJSON.total = result.length - 1;
+    resultJSON.success = result.length - errors - 1;
     resultJSON.errors = errors;
     resultJSON.errorList = errorList;
     // console.log(resultJSON);
-    io.writeLogFile("./log.json",JSON.stringify(resultJSON),'utf8');
+    io.writeLogFile("./log.json", JSON.stringify(resultJSON), 'utf8');
     return resultJSON;
 
 };
@@ -90,5 +92,5 @@ var extractName = (input) => {
             return tempEmail;
         }
     }
-    return " ";
+    return false;
 };

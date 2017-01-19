@@ -1,7 +1,11 @@
 {
   "name": "vCardToCSV",
   "description": "Vcard to CVS converter",
-  "author": "Stavros Zarpas",
+  "author":  {
+    "name": "Stavros Zarpas",
+    "email": "stavros.z@hotmail.com",
+    "url": "http://lizardsolutions.tk/"
+  },
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
@@ -13,10 +17,13 @@
     "mac": {
       "category": "converter"
     },
-    "win": {}
+    "win": {
+      "iconUrl": "https://raw.githubusercontent.com/Schavras/vCardToCSVConverter/master/assets/win/logo.ico"
+    }
   },
   "devDependencies": {
+    "electron": "^1.4.14",
     "electron-builder": "^11.4.4",
-    "electron": "^1.4.14"
+    "electron-packager": "^8.5.0"
   }
 }

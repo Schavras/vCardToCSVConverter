@@ -60,5 +60,5 @@ function convert() {
 
     document.getElementById("errorList").innerHTML = errList;
 
-
+    document.getElementById("result").style.display = "block";
 }
