@@ -35,7 +35,7 @@ function getInstallerConfig () {
 
     return Promise.resolve({
         appDirectory: path.join(outPath, 'vCardToCSV-win32-ia32'),
-        iconUrl: 'https://raw.githubusercontent.com/Schavras/vCardToCSVConverter/master/assets/win/logo.ico',
+        iconUrl: 'https://raw.githubusercontent.com/Schavras/vCardToCSVConverter/master/build/icon.ico',
 
         noMsi: true,
         outputDirectory: path.join(outPath, 'windows-installer'),
